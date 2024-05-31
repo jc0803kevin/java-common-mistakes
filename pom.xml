@@ -20,6 +20,8 @@
         <module>common</module>
         <module>concurrenttool</module>
         <module>concurrenttool/concurrenthashmapmisuse</module>
+        <module>concurrenttool/concurrenthashmapperformance</module>
+        <module>concurrenttool/copyonwritelistmisuse</module>
     </modules>
 
     <properties>
