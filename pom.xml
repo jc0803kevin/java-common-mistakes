@@ -16,8 +16,9 @@
 
 
     <modules>
-        <module>concurrenttool-threadlocal</module>
+<!--        <module>concurrenttool-threadlocal</module>-->
         <module>common</module>
+        <module>concurrenttool</module>
     </modules>
 
     <properties>
