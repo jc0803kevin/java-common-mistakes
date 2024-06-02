@@ -5,19 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>icu.kevin</groupId>
-        <artifactId>java-common-mistakes</artifactId>
+        <artifactId>threadpool</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>concurrenttool</artifactId>
-    <packaging>pom</packaging>
-
-    <modules>
-        <module>concurrenttool-threadlocal</module>
-        <module>concurrenthashmapmisuse</module>
-        <module>concurrenthashmapperformance</module>
-        <module>copyonwritelistmisuse</module>
-    </modules>
+    <artifactId>threadpooloom</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

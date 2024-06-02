@@ -16,12 +16,11 @@
 
 
     <modules>
-<!--        <module>concurrenttool-threadlocal</module>-->
         <module>common</module>
         <module>concurrenttool</module>
-        <module>concurrenttool/concurrenthashmapmisuse</module>
-        <module>concurrenttool/concurrenthashmapperformance</module>
-        <module>concurrenttool/copyonwritelistmisuse</module>
+        <module>threadpool</module>
+        <module>lock</module>
+        <module>lock/lockandtransaction</module>
     </modules>
 
     <properties>
