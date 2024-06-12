@@ -21,6 +21,8 @@
         <module>threadpool</module>
         <module>lock</module>
         <module>lock/lockandtransaction</module>
+        <module>connectionpool</module>
+        <module>httpinvoke</module>
     </modules>
 
     <properties>
