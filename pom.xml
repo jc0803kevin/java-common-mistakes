@@ -23,6 +23,7 @@
         <module>lock/lockandtransaction</module>
         <module>connectionpool</module>
         <module>httpinvoke</module>
+        <module>transaction</module>
     </modules>
 
     <properties>
