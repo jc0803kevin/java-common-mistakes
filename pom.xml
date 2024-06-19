@@ -24,6 +24,7 @@
         <module>connectionpool</module>
         <module>httpinvoke</module>
         <module>transaction</module>
+        <module>equals</module>
     </modules>
 
     <properties>
