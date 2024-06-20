@@ -61,6 +61,8 @@ public class IntAndStringEqualTest {
         return list.size();
     }
 
+
+    @Test
     public void intcompare() {
 
         Integer a = 127; //Integer.valueOf(127)
