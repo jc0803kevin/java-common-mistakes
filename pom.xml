@@ -20,11 +20,11 @@
         <module>concurrenttool</module>
         <module>threadpool</module>
         <module>lock</module>
-        <module>lock/lockandtransaction</module>
         <module>connectionpool</module>
         <module>httpinvoke</module>
         <module>transaction</module>
         <module>equals</module>
+        <module>serialization</module>
     </modules>
 
     <properties>
