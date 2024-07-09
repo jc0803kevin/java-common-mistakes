@@ -25,6 +25,7 @@
         <module>transaction</module>
         <module>equals</module>
         <module>serialization</module>
+        <module>datetime</module>
     </modules>
 
     <properties>
