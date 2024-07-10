@@ -5,21 +5,26 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>icu.kevin</groupId>
-        <artifactId>java-common-mistakes</artifactId>
+        <artifactId>troubleshootingtools</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>oom</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>usernameautocomplete</module>
-        <module>impropermaxheadersize</module>
-    </modules>
+    <artifactId>mat</artifactId>
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>icu.kevin.troubleshootingtools.mat.CommonMistakesApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

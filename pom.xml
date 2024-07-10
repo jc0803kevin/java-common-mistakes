@@ -27,6 +27,7 @@
         <module>serialization</module>
         <module>datetime</module>
         <module>oom</module>
+        <module>troubleshootingtools</module>
     </modules>
 
     <properties>
@@ -239,10 +240,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>javaprogramming.commonmistakes.troubleshootingtools.jdktool.CommonMistakesApplication
-                    </mainClass>
-                </configuration>
+<!--                <configuration>-->
+<!--                    <mainClass>javaprogramming.commonmistakes.troubleshootingtools.jdktool.CommonMistakesApplication-->
+<!--                    </mainClass>-->
+<!--                </configuration>-->
             </plugin>
             <!--            <plugin>-->
             <!--                <groupId>org.projectlombok</groupId>-->
