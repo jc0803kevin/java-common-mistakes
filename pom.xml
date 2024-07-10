@@ -26,6 +26,7 @@
         <module>equals</module>
         <module>serialization</module>
         <module>datetime</module>
+        <module>oom</module>
     </modules>
 
     <properties>
