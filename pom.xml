@@ -28,6 +28,7 @@
         <module>datetime</module>
         <module>oom</module>
         <module>troubleshootingtools</module>
+        <module>dataandcode</module>
     </modules>
 
     <properties>
@@ -289,8 +290,8 @@
     </build>
     <repositories>
         <repository>
-            <id>nexus-aliyun</id>
-            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <id>alimaven</id>
+            <url>http://maven.aliyun.com/nexus/content/repositories/central/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
