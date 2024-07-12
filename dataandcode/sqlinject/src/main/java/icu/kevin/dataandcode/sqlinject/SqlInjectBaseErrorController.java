@@ -3,12 +3,12 @@ package icu.kevin.dataandcode.sqlinject;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.method.HandlerMethod;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;
-import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 
 /**
  * 基于错误的注入
@@ -32,11 +32,6 @@ public class SqlInjectBaseErrorController {
                 "  PRIMARY KEY (`id`)\n" +
                 ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;");
         jdbcTemplate.execute("INSERT INTO `users` (username,password) VALUES ('test1','haha1'),('test2','haha2'),('kevin','123456')");
-    }
-
-    @ExceptionHandler
-    public void handle(HttpServletRequest req, HandlerMethod method, Exception ex) {
-        log.warn(String.format("访问 %s -> %s 出现异常！", req.getRequestURI(), method.toString()), ex);
     }
 
     @PostMapping("wrong")
