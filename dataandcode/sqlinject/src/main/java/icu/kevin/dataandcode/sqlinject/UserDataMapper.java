@@ -11,6 +11,9 @@ public interface UserDataMapper {
     @Select("SELECT id,name FROM `userdata` WHERE name LIKE '%${name}%'")
     List<UserData> findByNameWrong(@Param("name") String name);
 
+    // 采用动态SQL的
+    List<UserData> findByNameDynamic(@Param("name") String name);
+
     List<UserData> findByNamesWrong(@Param("names") String names);
 
     @Select("SELECT id,name FROM `userdata` WHERE name LIKE CONCAT('%',#{name},'%')")

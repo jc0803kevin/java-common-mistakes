@@ -7,6 +7,17 @@
         FROM `userdata`
         WHERE name in (${names})
     </select>
+
+    <select id="findByNameDynamic" resultType="icu.kevin.dataandcode.sqlinject.UserData">
+        SELECT id, name
+        FROM `userdata`
+        <where>
+            <if test="name != null">
+                AND name LIKE CONCAT('%',#{name},'%')
+            </if>
+        </where>
+    </select>
+
     <select id="findByNamesRight" resultType="icu.kevin.dataandcode.sqlinject.UserData">
         SELECT id,name FROM `userdata` WHERE name in
         <foreach collection="names" item="item" open="(" separator="," close=")">
