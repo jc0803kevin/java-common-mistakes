@@ -5,16 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>icu.kevin</groupId>
-        <artifactId>java-common-mistakes</artifactId>
+        <artifactId>springpart</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>springpart</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>beansingletonandorder</module>
-        <module>aopmetrics</module>
-    </modules>
+    <artifactId>aopmetrics</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -22,4 +17,14 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+    </dependencies>
 </project>
