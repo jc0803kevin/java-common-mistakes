@@ -29,6 +29,7 @@
         <module>oom</module>
         <module>troubleshootingtools</module>
         <module>dataandcode</module>
+        <module>springpart</module>
     </modules>
 
     <properties>
