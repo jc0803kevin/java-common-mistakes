@@ -14,7 +14,7 @@ public class CircularDependencyIntegrationTest {
 
     @Autowired
     private ApplicationContext context;
-    // Error creating bean with name 'circularDependencyA': Requested bean is currently in creation: Is there an unresolvable circular reference?
+
     @Test
     public void givenCircularDependency_whenConstructorInjection_thenItFails() {
         // Empty test; we just want the context to load

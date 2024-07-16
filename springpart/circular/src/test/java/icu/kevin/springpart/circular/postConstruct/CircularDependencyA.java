@@ -11,6 +11,7 @@ public class CircularDependencyA {
     @Autowired
     private CircularDependencyB circB;
 
+    // 手动将自身依赖项赋值过去，从而打破循环
     @PostConstruct
     public void init(){
         circB.setCircA(this);
