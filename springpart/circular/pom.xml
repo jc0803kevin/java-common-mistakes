@@ -5,17 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>icu.kevin</groupId>
-        <artifactId>java-common-mistakes</artifactId>
+        <artifactId>springpart</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>springpart</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>beansingletonandorder</module>
-        <module>aopmetrics</module>
-        <module>circular</module>
-    </modules>
+    <artifactId>circular</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

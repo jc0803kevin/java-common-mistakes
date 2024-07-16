@@ -1,0 +1,10 @@
+@Autowired注解、@Resource注解和@Inject注解
+
+| 维度    | @Autowired                             | @Resource                                                                             | @Inject                                                                                | 备注                        |
+|-------|----------------------------------------|---------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|---------------------------|
+| 规范标准  | Spring框架提供                             | [JSR-250](https://download.oracle.com/otndocs/jcp/common_annotations-1_3-mrel3-spec/) | JSR-330                                                                                |                           |
+| 匹配方式  | 根据类型 ，<br/>如果需要按名称进行装配，则需要配合@Qualifier | 根据名称                                                                                  | 根据类型进行自动装配的，<br/>如果需要按名称进行装配，则需要配合@Named                                               |                           |
+| 作用位置  | 变量、setter方法、构造函数上                      | 变量、setter方法                                                                           | 变量、setter方法、构造函数上                                                                      |                           |
+| 如何引入  | Spring框架提供，不需要额外引入                     | 不需要导入格外的包，在JDK的rt.jar包                                                                | 需要导入[javax.inject.Inject](https://repo1.maven.org/maven2/javax/inject/javax.inject/1/) |                           |
+| 注解处理器 | AutowiredAnnotationBeanPostProcessor   | CommonAnnotationBeanPostProcessor                                                     | CommonAnnotationBeanPostProcessor                                                      | 都是通过BeanPostProcessor接口实现 |
+|       |                                        |                                                                                       |                                                                                        |                           |
