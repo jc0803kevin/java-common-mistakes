@@ -30,6 +30,7 @@
         <module>troubleshootingtools</module>
         <module>dataandcode</module>
         <module>springpart</module>
+        <module>cache</module>
     </modules>
 
     <properties>
