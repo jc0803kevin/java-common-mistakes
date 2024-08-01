@@ -22,7 +22,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>icu.kevin.troubleshootingtools.mat.CommonMistakesApplication</mainClass>
+<!--                    <mainClass>icu.kevin.troubleshootingtools.mat.CommonMistakesApplication</mainClass>-->
                 </configuration>
             </plugin>
         </plugins>
