@@ -26,7 +26,7 @@ public class CacheInvalidController {
     private StringRedisTemplate stringRedisTemplate;
     private AtomicInteger atomicInteger = new AtomicInteger();
 
-    @PostConstruct
+//    @PostConstruct
     public void wrongInit() {
         IntStream.rangeClosed(1, 1000).forEach(i ->
                 stringRedisTemplate.opsForValue().set("city" + i, getCityFromDb(i), 30, TimeUnit.SECONDS));

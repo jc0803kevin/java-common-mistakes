@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.UUID;
+
 /**
  * createUser，createSubUser 两个事务需要做到不相互影响
  */
@@ -19,6 +21,11 @@ public class TransactionPropagationController {
 
     @Autowired
     private UserService userService;
+
+    @GetMapping("ping")
+    public String ping(){
+        return UUID.randomUUID().toString();
+    }
 
     @GetMapping("wrong")
     public int wrong(@RequestParam("name") String name) {
