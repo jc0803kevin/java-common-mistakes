@@ -5,17 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>icu.kevin</groupId>
-        <artifactId>java-common-mistakes</artifactId>
+        <artifactId>cache</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>cache</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>avalanche</module>
-        <module>cacheconcurrent</module>
-        <module>cachepenetration</module>
-    </modules>
+    <artifactId>cachepenetration</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

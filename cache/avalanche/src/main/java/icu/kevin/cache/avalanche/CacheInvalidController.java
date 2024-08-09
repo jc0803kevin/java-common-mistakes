@@ -26,7 +26,7 @@ public class CacheInvalidController {
     private StringRedisTemplate stringRedisTemplate;
     private AtomicInteger atomicInteger = new AtomicInteger();
 
-//    @PostConstruct
+    @PostConstruct
     public void wrongInit() {
         IntStream.rangeClosed(1, 1000).forEach(i ->
                 stringRedisTemplate.opsForValue().set("city" + i, getCityFromDb(i), 30, TimeUnit.SECONDS));
@@ -36,10 +36,12 @@ public class CacheInvalidController {
         }, 0, 1, TimeUnit.SECONDS);
     }
 
-    //@PostConstruct
+//    @PostConstruct
     public void rightInit1() {
         IntStream.rangeClosed(1, 1000).forEach(i ->
-                stringRedisTemplate.opsForValue().set("city" + i, getCityFromDb(i), 30 + ThreadLocalRandom.current().nextInt(10), TimeUnit.SECONDS));
+                // 增加10秒的随机数，差异化过期时间
+                stringRedisTemplate.opsForValue()
+                        .set("city" + i, getCityFromDb(i), 30 + ThreadLocalRandom.current().nextInt(10), TimeUnit.SECONDS));
         log.info("Cache init finished");
         Executors.newSingleThreadScheduledExecutor().scheduleAtFixedRate(() -> {
             log.info("DB QPS : {}", atomicInteger.getAndSet(0));
@@ -49,14 +51,18 @@ public class CacheInvalidController {
 //    @PostConstruct
     public void rightInit2() throws InterruptedException {
         CountDownLatch countDownLatch = new CountDownLatch(1);
+
+        // 每隔30秒全量更新一次缓存
         Executors.newSingleThreadScheduledExecutor().scheduleAtFixedRate(() -> {
             IntStream.rangeClosed(1, 1000).forEach(i -> {
                 String data = getCityFromDb(i);
                 try {
+                    // 模拟更新缓存需要一定的时间
                     TimeUnit.MILLISECONDS.sleep(20);
                 } catch (InterruptedException e) {
                 }
                 if (!StringUtils.isEmpty(data)) {
+                    //缓存永不过期，被动更新
                     stringRedisTemplate.opsForValue().set("city" + i, data);
                 }
             });
@@ -77,8 +83,10 @@ public class CacheInvalidController {
         String key = "city" + id;
         String data = stringRedisTemplate.opsForValue().get(key);
         if (data == null) {
+            // 数据库回源
             data = getCityFromDb(id);
             if (!StringUtils.isEmpty(data))
+                // 重新放回到缓存
                 stringRedisTemplate.opsForValue().set(key, data, 30, TimeUnit.SECONDS);
         }
         return data;
@@ -86,6 +94,7 @@ public class CacheInvalidController {
 
 
     private String getCityFromDb(int cityId) {
+        //模拟查询数据库，查一次增加计数器加一
         atomicInteger.incrementAndGet();
         return "citydata" + System.currentTimeMillis();
     }
